@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ==================== CSS ==================== -->
+    <link rel="stylesheet" href="../css/modern-normalize.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Signika:wght@600&display=swap" rel="stylesheet">
+    
+    <title>document</title>
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="nav_menu_header">
+        <ul class="ul_global_menu_header">
+          <li class="menu_deroulant">
+            <a class="a_menu_header" href="#"><i class="fa-solid fa-bars"></i></a>
+            <ul class="sous_menu">
+              <li class="li_menu_header"><a class="a_menu_header" href="../../index.html">Accueil</a></li>
+              <li class="li_menu_header"><a class="a_menu_header" href="../html/activite.html">Activités</a></li>
+              <li class="li_menu_header"><a class="a_menu_header" id="active" href="#">Contactez-nous</a></li>
+            </ul>
+          </li>     
+        </ul>
+      </nav>
+      <img class="logo_header"  src="../image/Les_Seniorissimes_-_logo.png" alt="">
+    </header>
+
+    <main>
+      <div class="container">
+        <form action="traitement.php" method="post" id="myForm">
+          <h1 class="titre_formu">Contactez-nous</h1>
+
+      <!---->
+          
+          <input type="text" class="case" placeholder="Votre nom" id="username">
+          
+          <span id="error"></span>
+      <!---->
+
+      <!---->
+          
+          <input type="text" class="case" placeholder="Votre prénom" id="firstname">
+          
+          <span id="error2"></span>
+      <!---->
+
+      <!---->
+          
+          <input type="text" class="case" placeholder="Ville..." id="ville">
+          
+          <span id="error3"></span>
+      <!---->
+
+      <!---->
+          
+            <textarea
+              name="Message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Message"
+              required
+            ></textarea>
+         
+      <!---->
+          
+      <!---->
+          <div class="check">
+            <p id="para">
+            <input id="checkbox" type="checkbox" required />
+            J'accepte que mes donnée soient utilisées dans le cadre du
+            traitment de ma demande
+            </p>
+          </div>
+      <!---->
+
+      <!---->
+          <div class="left">
+            <input type="submit" value="Envoyer" class="button">
+          </div>
+      <!---->
+
+        </form>
+      </div>
+    </main>
+      
+    <footer>
+      <h2>Association des Les Séniorissimes</h2>
+      <p>20 Rue de l'Etoile de la mort <br> 63000 Clermont-Ferrand</p>
+    </footer>
+      
+    <!-- ==================== JS ==================== -->
+    <script src="https://kit.fontawesome.com/71e58fb851.js" crossorigin="anonymous"></script>
+    <script src="../js/formu.js"></script>
+  </body>
+  
+</html>
