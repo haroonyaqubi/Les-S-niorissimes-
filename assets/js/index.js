@@ -140,6 +140,7 @@ activites.innerHTML= `
     } 
     else
     {
+      espace.style.marginBottom= "20px";
       activites.innerHTML=
         ` <div class="marche">
         <div class="paragraphe">
