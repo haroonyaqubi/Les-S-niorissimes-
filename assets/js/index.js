@@ -3,10 +3,10 @@ const city = 'Paris,fr';
 const url = 'https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&lang=fr&appid=7623f6fe77add6c69e4063b6698fbf66&units=metric';
 
 let test = document.querySelector(".test");
-let choix1 = document.querySelector("#choix1");
 let activites = document.querySelector(".activites");
+let espace = document.querySelector(".container_index");
 activites.style.display="none";
-
+espace.style.marginBottom= "500px";
 
 
 fetch(url)
@@ -28,9 +28,11 @@ fetch(url)
         console.log(nomVille);
         console.log(descr);*/
 
-        
-       choix1.addEventListener("click", () => {
-
+      
+        document.querySelector('#choix').addEventListener("change", function() {
+        if(this.value == "1"){
+          console.log('Paris selected');
+    
         // function meteo() {
 
             test.style.display = "flex";
@@ -48,6 +50,7 @@ fetch(url)
 function activite(){
     if( temperature < 10 ) {
 activites.style.display="flex";
+espace.style.marginBottom= "20px";
 activites.innerHTML= ` 
 <h3>Les activités proposés:</h3>
  <div class="bricolage">
@@ -175,7 +178,7 @@ activites.innerHTML= `
     }
 }
    activite()  ;
-    })
+    }})
     .catch (error => {
     console.error(error);
 })});
