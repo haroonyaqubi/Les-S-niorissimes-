@@ -5,9 +5,9 @@ const url = 'https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&lang=fr&
 let test = document.querySelector(".test");
 let activites = document.querySelector(".activites");
 let espace = document.querySelector(".container_index");
-activites.style.display="none";
-espace.style.marginBottom= "500px";
 
+espace.style.marginBottom= "500px";
+activites.style.display = "none";
 
 fetch(url)
     .then(response => response.json())
@@ -32,10 +32,10 @@ fetch(url)
         document.querySelector('#choix').addEventListener("change", function() {
         if(this.value == "1"){
           console.log('Paris selected');
-    
-        // function meteo() {
 
             test.style.display = "flex";
+            activites.style.display = "flex";
+
             test.innerHTML = `<div class="weather"> 
     <h1>${nomVille}</h1>
     <span>Température : ${temperature} °C </span> 
@@ -45,10 +45,17 @@ fetch(url)
     <h2>${descr}</h2>
     </div>`
 
-    // }
-    //     meteo();
+   activite();
+    }
+  })
+    .catch (error => {
+    console.error(error);
+})
+
+
 function activite(){
-    if( temperature < 10 ) {
+    if( temperature < 9 ) {
+      console.log("ok");
 activites.style.display="flex";
 espace.style.marginBottom= "20px";
 activites.innerHTML= ` 
@@ -130,7 +137,10 @@ activites.innerHTML= `
 </div>
 <div class="img"><img class="img_xa" src="assets/image/societe.jpg" alt=""></div>
 </div>`
-    }else{
+    } 
+    else
+    {
+      activites.innerHTML=
         ` <div class="marche">
         <div class="paragraphe">
           <h2 class="h2_xa">Marche</h2>
@@ -177,8 +187,4 @@ activites.innerHTML= `
         </div>`
     }
 }
-   activite()  ;
-    }})
-    .catch (error => {
-    console.error(error);
-})});
+});
